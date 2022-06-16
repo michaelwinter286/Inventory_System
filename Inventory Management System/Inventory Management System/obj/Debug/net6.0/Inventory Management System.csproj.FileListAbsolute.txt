@@ -13,3 +13,14 @@ C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Invento
 C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\obj\Debug\net6.0\Inventory Management System.pdb
 C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\obj\Debug\net6.0\Inventory Management System.genruntimeconfig.cache
 C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\obj\Debug\net6.0\ref\Inventory Management System.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Colorful.Console.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\obj\Debug\net6.0\Inventory Management System.csproj.CopyComplete

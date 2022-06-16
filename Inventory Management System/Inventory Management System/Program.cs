@@ -1,2 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welcome to Sampley Farms Inventory Management System!");
+﻿using System;
+
+namespace Inventory
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+            Console.Title = "Program";
+           
+            MainMenu.WriteLogo();
+            Console.WriteLine("What can we help with today? (Press any Key to continue.)");
+            Console.ReadKey(true);
+            MainMenu.Menu();
+        }
+    }
+}
+    
