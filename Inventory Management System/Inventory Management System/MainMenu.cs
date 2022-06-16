@@ -18,11 +18,12 @@ namespace Inventory
                 Console.Clear();
                 WriteLogo();
                 Console.WriteLine("Please choose one of the following options.");
-                Say("1", "Add New Inventory");
-                Say("2", "Update Existing Inventory");
-                Say("3", "Remove Item from Inventory");
-                Say("4", "View All Current Inventory");
+                Say("1", "Add New Inventory");                
+                Say("2", "Update Existing Inventory");                
+                Say("3", "Remove Item from Inventory");                
+                Say("4", "View All Current Inventory");                
                 Say("5", "Quit");
+                
                 string option = Console.ReadLine();
                 if (option == "1")
                 {
@@ -39,6 +40,10 @@ namespace Inventory
                 else if (option == "4")
                 {
                     // go to view all current inventory
+                }
+                else if (option == "5")
+                {
+                    // exit program save JSON file
                 }
                 else
                 {
