@@ -60,6 +60,7 @@ namespace Inventory
             Console.Write("[");
             Console.Write(prefix, Color.LimeGreen);
             Console.Write("] " + message);
+            Console.WriteLine();
         }
 
         public static void WriteLogo()
