@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Colorful;
+using Console = Colorful.Console;
 
 namespace Inventory
 {
@@ -11,26 +13,21 @@ namespace Inventory
         public static void Exit()
         {
             Console.Clear();
-            Console.WriteLine("Are you sure you want to exit? (Y/N)");
+            Console.WriteLine("Are you sure you want to EXIT? (Y/N)");
             Console.WriteLine();
 
-                string exit = Console.ReadLine();
-                    if (exit == "n")
-                    {
-                        MainMenu.Menu();
-                    }
-                    else
-                    {
-                        Environment.Exit(0);
-                    }
-
-
-
+            string exit = Console.ReadLine();
+            
+            if (exit == "y")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                MainMenu.Menu();
+            }
         }
 
-        
-        
-        
-                               
     }
+
 }
