@@ -17,6 +17,7 @@ namespace Inventory
             Console.WriteLine();
 
             string exit = Console.ReadLine();
+            exit = exit.ToLower();
             
             if (exit == "y")
             {

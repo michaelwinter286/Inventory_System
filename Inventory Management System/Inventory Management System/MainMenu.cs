@@ -29,27 +29,37 @@ namespace Inventory
                 string option = Console.ReadLine();
                 if (option == "1")
                 {
-                    // go to add new inventory
+                    Console.Clear();
+                    InvDictionary.AddInv();                                                  
                 }
                 else if (option == "2")
                 {
-                    // go to update existing inventory
+                    Console.Clear();
+                    //Console.WriteLine("What item would you like to update?\n");
+                    InvDictionary.EditInv();
+                    // go to update existing inventory/update dictionary/file
                 }
                 else if (option == "3")
                 {
-                    // go to Remove Item from Inventory (this item is to delete a record)
+                    Console.Clear();
+                    Console.WriteLine("What item would you like to remove from the Inventory?");
+                    Console.ReadLine();// go to Remove Item from Inventory (this item is to delete a record) from dictionary
                 }
                 else if (option == "4")
                 {
-                    // go to view all current inventory
+                    Console.Clear();
+                    Console.WriteLine("Here is your complete Inventory. (Press any key to return to Main Menu.)\n");
+                    InvDictionary.Inv();
+                    Console.ReadKey(true);
+                    MainMenu.Menu();                 
                 }
                 else if (option == "5")
-                { // exit program save JSON file
+                { // exit program save file
                     ConsoleExit.Exit();
                 }                   
                 else
                 {
-                    Console.WriteLine("Error, Please select a valid option!");
+                    Console.WriteLine("Error! Please select a valid option!");
                     Thread.Sleep(2000);
                 }
             }
