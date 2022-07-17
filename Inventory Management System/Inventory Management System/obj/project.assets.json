@@ -26,6 +26,15 @@
           "lib/netstandard2.0/Colorful.Console.dll": {}
         }
       },
+      "CsvHelper/28.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/CsvHelper.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -619,6 +628,30 @@
         "lib/net46/Colorful.Console.dll",
         "lib/net461/Colorful.Console.dll",
         "lib/netstandard2.0/Colorful.Console.dll"
+      ]
+    },
+    "CsvHelper/28.0.1": {
+      "sha512": "T/Eid0mP/GeWV1RcxmUPSsBCtOm6wHbFII6iFydPfpIa6cd+siec0KGrLq5uabI8sH6crFi84OA1vNLkp8Lzlw==",
+      "type": "package",
+      "path": "csvhelper/28.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.28.0.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
       ]
     },
     "Microsoft.CSharp/4.0.1": {
@@ -2720,6 +2753,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Colorful.Console >= 1.2.15",
+      "CsvHelper >= 28.0.1",
       "Microsoft.Extensions.Configuration.UserSecrets >= 5.0.0"
     ]
   },
@@ -2765,6 +2799,10 @@
           "Colorful.Console": {
             "target": "Package",
             "version": "[1.2.15, )"
+          },
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[28.0.1, )"
           },
           "Microsoft.Extensions.Configuration.UserSecrets": {
             "target": "Package",

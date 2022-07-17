@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sYrX03zZl5mg5QR8W2UHMsOf6q6fnO0AISWYELEZKugP6wSPJP4OOK46irKaCnyGeb8IgPBXqsS1O6MShoTmrA==",
+  "dgSpecHash": "HliWPRh4kaIK2ehzh/48w/StrmJGYrYTuD3OXWz5U3ZlUqjKfFPHwcmY2gijzM+x0bm9C5p8h1i0VETZi2AAmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\micha\\source\\repos\\Inventory_System\\Inventory Management System\\Inventory Management System\\Inventory Management System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micha\\.nuget\\packages\\colorful.console\\1.2.15\\colorful.console.1.2.15.nupkg.sha512",
+    "C:\\Users\\micha\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

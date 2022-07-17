@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using System.IO;
+using System.Globalization;
 using Colorful;
 using Console = Colorful.Console;
 
@@ -27,16 +30,79 @@ namespace Inventory
                 
                 Console.WriteLine();
                 string option = Console.ReadLine();
+
                 if (option == "1")
                 {
-                    Console.Clear();
-                    InvDictionary.AddInv();                                                  
-                }
+                    {
+                        string item;
+                        string amount;
+                        string back;
+
+                        StreamWriter sw = new StreamWriter("inventory.csv", true);
+
+                        do
+                        {
+                            Console.Clear();
+                            Console.Write("What would you like to add to your Inventory?\n");
+                            item = Console.ReadLine();
+                            Console.WriteLine();
+                            Console.Write("What is the starting amount for the new item?\n");
+                            amount = Console.ReadLine();
+
+                            sw.WriteLine(item + "," + amount);
+
+                            Console.WriteLine("Would you like to add more items?");
+                            back = Console.ReadLine();
+                            back = back.ToLower();
+
+                            if (back == "yes")
+                            {
+                                Console.Clear();
+                                Console.Write("What would you like to add to your Inventory?\n");
+                                item = Console.ReadLine();
+                                Console.WriteLine();
+                                Console.Write("What is the starting amount for the new item?\n");
+                                amount = Console.ReadLine();
+
+                                sw.WriteLine(item + "," + amount);
+
+                                Console.WriteLine("Would you like to add more items?");
+                                back = Console.ReadLine();
+                                back = back.ToLower();
+                            }
+                            else if (back == "no")
+                            {
+                                sw.Flush();
+                                sw.Close();
+                                MainMenu.Menu();
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("Please try again!");
+                            }
+
+                        } while (back != "no");
+                        sw.Flush();
+                        sw.Close();
+
+                        
+                        
+                        
+                        }
+
+                        //Console.WriteLine("What Item would you like to add to the Inventory?"); 
+                        //string ItemName = Console.ReadLine();
+                        //Console.WriteLine("How much of the item do you have?");
+                        //string ItemAmt = Console.ReadLine();
+
+                    }
+                
                 else if (option == "2")
                 {
                     Console.Clear();
                     //Console.WriteLine("What item would you like to update?\n");
-                    InvDictionary.EditInv();
+                    //InvDictionary.EditInv();
                     // go to update existing inventory/update dictionary/file
                 }
                 else if (option == "3")
@@ -49,17 +115,18 @@ namespace Inventory
                 {
                     Console.Clear();
                     Console.WriteLine("Here is your complete Inventory. (Press any key to return to Main Menu.)\n");
-                    InvDictionary.Inv();
+                    //InvDictionary.Inv();
                     Console.ReadKey(true);
-                    MainMenu.Menu();                 
+                    MainMenu.Menu();
                 }
                 else if (option == "5")
                 { // exit program save file
                     ConsoleExit.Exit();
-                }                   
+                }
                 else
                 {
                     Console.WriteLine("Error! Please select a valid option!");
+                    Console.Beep(1000, 1000); // Thanks Dave!!
                     Thread.Sleep(2000);
                 }
             }
