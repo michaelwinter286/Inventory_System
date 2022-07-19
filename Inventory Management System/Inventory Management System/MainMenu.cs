@@ -40,22 +40,23 @@ namespace Inventory
 
                         StreamWriter sw = new StreamWriter("inventory.csv", true);
 
-                        do
+                        do //still need to setup "null" value catch and throw exception message. Send Exception message to another file "Error Log"
                         {
                             Console.Clear();
                             Console.Write("What would you like to add to your Inventory?\n");
                             item = Console.ReadLine();
                             Console.WriteLine();
-                            Console.Write("What is the starting amount for the new item?\n");
+                            Console.Write("What is the starting amount for the new item? (Please add unit of measure to amount.)\n");
+                            Console.WriteLine();
                             amount = Console.ReadLine();
 
                             sw.WriteLine(item + "," + amount);
-
+                            Console.WriteLine();
                             Console.WriteLine("Would you like to add more items?");
                             back = Console.ReadLine();
                             back = back.ToLower();
 
-                            if (back == "yes")
+                            if (back == "y")
                             {
                                 Console.Clear();
                                 Console.Write("What would you like to add to your Inventory?\n");
@@ -66,25 +67,31 @@ namespace Inventory
 
                                 sw.WriteLine(item + "," + amount);
 
-                                Console.WriteLine("Would you like to add more items?");
+                                Console.WriteLine("Would you like to add more items? (Y/N)\n");
                                 back = Console.ReadLine();
                                 back = back.ToLower();
                             }
-                            else if (back == "no")
+                            else if (back == "n")
                             {
+                                Console.WriteLine("You have successfully added" + amount + "of" + item + "to the inventory.");
                                 sw.Flush();
                                 sw.Close();
+                                Thread.Sleep(4000);
                                 MainMenu.Menu();
                             }
 
                             else
                             {
+                                Console.Beep(1000, 1000); // Thanks Dave!!
                                 Console.WriteLine("Please try again!");
+                                Thread.Sleep(2000);
+
                             }
 
-                        } while (back != "no");
+                        } while (back != "n");
                         sw.Flush();
                         sw.Close();
+                        MainMenu.Menu();
 
                         
                         
@@ -115,8 +122,18 @@ namespace Inventory
                 {
                     Console.Clear();
                     Console.WriteLine("Here is your complete Inventory. (Press any key to return to Main Menu.)\n");
-                    //InvDictionary.Inv();
+                    Console.WriteLine();
+                    StreamReader sr = new StreamReader("inventory.csv");
+                    string data = sr.ReadLine();
+                    while (data != null)
+                    {
+                        Console.WriteLine(data);
+                        data = sr.ReadLine();
+
+                    }
+
                     Console.ReadKey(true);
+                    sr.Close();
                     MainMenu.Menu();
                 }
                 else if (option == "5")
