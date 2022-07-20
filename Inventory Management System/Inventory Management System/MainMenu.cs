@@ -23,10 +23,11 @@ namespace Inventory
                 Console.WriteLine("Please choose one of the following options.");
                 Console.WriteLine();
                 Say("1", "Add New Inventory");                
-                Say("2", "Update Existing Inventory");                
+                Say("2", "Update Existing Inventory (currenlty Under Development)");                
                 Say("3", "Remove Item from Inventory");                
-                Say("4", "View All Current Inventory");                
-                Say("5", "Quit");
+                Say("4", "View All Current Inventory");
+                Say("5", "View Error Log");
+                Say("6", "Quit");
                 
                 Console.WriteLine();
                 string option = Console.ReadLine();
@@ -52,7 +53,7 @@ namespace Inventory
 
                             sw.WriteLine(item + "," + amount);
                             Console.WriteLine();
-                            Console.WriteLine("Would you like to add more items?");
+                            Console.WriteLine("Would you like to add more items? (Y/N)");
                             back = Console.ReadLine();
                             back = back.ToLower();
 
@@ -71,9 +72,10 @@ namespace Inventory
                                 back = Console.ReadLine();
                                 back = back.ToLower();
                             }
+
                             else if (back == "n")
                             {
-                                Console.WriteLine("You have successfully added" + amount + "of" + item + "to the inventory.");
+                                Console.WriteLine("You have successfully added " + amount + "of" + item + " to the inventory.");
                                 sw.Flush();
                                 sw.Close();
                                 Thread.Sleep(4000);
@@ -85,26 +87,25 @@ namespace Inventory
                                 Console.Beep(1000, 1000); // Thanks Dave!!
                                 Console.WriteLine("Please try again!");
                                 Thread.Sleep(2000);
-
                             }
 
-                        } while (back != "n");
-                        sw.Flush();
-                        sw.Close();
-                        MainMenu.Menu();
-
-                        
-                        
-                        
                         }
 
-                        //Console.WriteLine("What Item would you like to add to the Inventory?"); 
-                        //string ItemName = Console.ReadLine();
-                        //Console.WriteLine("How much of the item do you have?");
-                        //string ItemAmt = Console.ReadLine();
+                        while (back == null);
+                        {
+                            Console.WriteLine("Please try again Blank Entry");
+                            sw.Flush();
+                            sw.Close();
+                            Thread.Sleep(4000);
+                            MainMenu.Menu();
+                        }
+
+
 
                     }
-                
+
+                }
+
                 else if (option == "2")
                 {
                     Console.Clear();
@@ -123,21 +124,79 @@ namespace Inventory
                     Console.Clear();
                     Console.WriteLine("Here is your complete Inventory. (Press any key to return to Main Menu.)\n");
                     Console.WriteLine();
-                    StreamReader sr = new StreamReader("inventory.csv");
-                    string data = sr.ReadLine();
-                    while (data != null)
-                    {
-                        Console.WriteLine(data);
-                        data = sr.ReadLine();
 
+                    try
+                    {
+                        StreamReader sr = new StreamReader("inventory.csv");
+                        string? data = sr.ReadLine();
+
+                        while (data != null)
+                        {
+
+                            Console.WriteLine(data);
+                            data = sr.ReadLine();
+
+                        }
+
+                        Console.ReadKey(true);
+                        sr.Close();
+                        Menu();
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        Console.WriteLine("Your Inventory is currently empty. Please add items to view current Inventory. Thank You!\n\n" + "Error:" + ex);
+
+                        StreamWriter sw = new StreamWriter("ErrorLog.txt", true);
+                        DateTime errorDate = DateTime.Now;
+
+                        sw.WriteLine(errorDate + "\n" + ex + "\n");
+                        sw.WriteLine();
+                        sw.Flush();
+                        sw.Close();
+                        Thread.Sleep(3000);
+                        Menu();
                     }
 
-                    Console.ReadKey(true);
-                    sr.Close();
-                    MainMenu.Menu();
                 }
                 else if (option == "5")
-                { // exit program save file
+                {
+                    
+                    try
+                    {
+                        Console.Clear();
+                        Console.Write("Here are your Errors thus far.\n\n");
+                        StreamReader sr = new StreamReader("ErrorLog.txt");
+                        string? error = sr.ReadLine();
+
+                        while (error != null)
+                        {
+                            Console.WriteLine(error);
+                            error = sr.ReadLine();
+
+                        }
+
+                        Console.ReadKey(true);
+                        sr.Close();
+                        Menu();
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        Console.Clear();
+                        WriteLogo();
+                        Console.WriteLine("\n\n\n So.. Currently you have not had any errors to log. Congrats! But unfortunitly you have just created one! HAHA! Please run Error Log again to view.Press any key to return to Main Menu.\n\n" + "Error:" + ex);
+
+                        StreamWriter sw = new StreamWriter("ErrorLog.txt", true);
+                        DateTime errorDate = DateTime.Now;
+
+                        sw.WriteLine(errorDate + "\n" + ex + "\n");
+                        sw.Flush();
+                        sw.Close();
+                        Console.ReadKey();
+                        Menu();
+                    }
+                }
+                else if (option == "6")
+                { 
                     ConsoleExit.Exit();
                 }
                 else
