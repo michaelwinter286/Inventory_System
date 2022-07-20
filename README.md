@@ -4,10 +4,11 @@ Inventory System designed to help manage inventory on family farm.
 Features:
   User Input:
     Add Inventory
-    Edit Invetory
+    Edit Inventory (WIP)
+    View Inventory
   Reporting:
-    Error Log
+    Error Log - Date/Time tracking
   Data Storage:
-    Dictionary
-      External File data storage for Dictionary (Hopefully)
+    external csv
+      External File data storage Inventory and Error tracking.
   
