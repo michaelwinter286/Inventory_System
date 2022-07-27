@@ -14,13 +14,14 @@ namespace Inventory
             string? item;
             string? amount;
             string? back;
+            string? confirm;
 
             StreamWriter sw = new StreamWriter("inventory.csv", true);
-
-            //do //still need to setup "null" value catch and throw exception message. Send Exception message to another file "Error Log"
+                        
             {
                 Console.Clear();
                 Console.Write("What would you like to add to your Inventory?\n");
+                Console.WriteLine();
                 item = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(item))
@@ -65,51 +66,73 @@ namespace Inventory
                     }
 
                     else
-                    sw.WriteLine(item + "," + amount);
-                    Console.WriteLine();
-                    Console.WriteLine("Would you like to add more items? (Y/N)");
-                    back = Console.ReadLine();
-                    back = back?.ToLower();
+                    {
+                        Console.WriteLine("Is this correct?\t" + item + " - " + amount + "\t(Y/N to continue)");
+                        confirm = Console.ReadLine();
+                        confirm = confirm?.ToLower();
 
-                    if (back == "y")
-                    {
-                        Console.Clear();
-                        Console.WriteLine("You have successfully added " + amount + " of " + item + " to the inventory.");
-                        sw.Flush();
-                        sw.Close();
-                        Thread.Sleep(2000);
-                        Add();
-                    }
+                        if (string.IsNullOrEmpty(confirm))
+                        {
+                            Console.WriteLine("Error! Please add the items again!");
+                            Console.Beep();
+                            Thread.Sleep(2000);
+                            sw.Close();
+                            Add();
+                        }
+                        else if (confirm == "n")
+                        {
+                            sw.Close();
+                            Add();
+                        }
 
-                    else if (back == "n")
-                    {
-                        Console.WriteLine("You have successfully added " + amount + " of " + item + " to the inventory.");
-                        sw.Flush();
-                        sw.Close();
-                        Thread.Sleep(2000);
-                        MainMenu.Menu();
-                    }
+                        else
+                        {
+                            sw.WriteLine(item + "," + amount);
+                            Console.WriteLine();
+                            Console.WriteLine("Would you like to add more items? (Y/N)");
+                            back = Console.ReadLine();
+                            back = back?.ToLower();
 
-                    else if (string.IsNullOrEmpty(item))
-                    {
-                        Console.Beep(); // Thanks Dave!!
-                        Console.WriteLine("Please try again!");
-                        Thread.Sleep(2000);
-                    }
-                    else
-                    {
-                        Console.Beep(); // Thanks Dave!!
-                        Console.WriteLine("Please try again!");
-                        Thread.Sleep(2000);
+
+
+
+                            if (back == "y")
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You have successfully added " + amount + " of " + item + " to the inventory.");
+                                sw.Flush();
+                                sw.Close();
+                                Thread.Sleep(2000);
+                                Add();
+                            }
+
+                            else if (back == "n")
+                            {
+                                Console.WriteLine("You have successfully added " + amount + " of " + item + " to the inventory.");
+                                sw.Flush();
+                                sw.Close();
+                                Thread.Sleep(2000);
+                                MainMenu.Menu();
+                            }
+
+                            else if (string.IsNullOrEmpty(item))
+                            {
+                                Console.Beep(); // Thanks Dave!!
+                                Console.WriteLine("Please try again!");
+                                Thread.Sleep(2000);
+                            }
+                            else
+                            {
+                                Console.Beep(); // Thanks Dave!!
+                                Console.WriteLine("Please try again!");
+                                Thread.Sleep(2000);
+                            }
+                        }
                     }
                 }
-
-
-            }
-                        
+            }                        
             sw.Flush();
-            sw.Close();
-         
+            sw.Close();         
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Inventory
             //    }
             //    else
             //    {
-            //        string[] editInv = File.AppendAllLines("inventory.csv", true);
+            //        string[] editInv = File.AppendAllTextAsync("inventory.csv");
 
             //        var editItem = new List<string>();
             //        var editAmount = new List<string>();
@@ -78,6 +78,6 @@ namespace Inventory
             //    sw.Close();
             //    Thread.Sleep(3000);
             //    MainMenu.Menu();
-        }
+            }
     }
 }

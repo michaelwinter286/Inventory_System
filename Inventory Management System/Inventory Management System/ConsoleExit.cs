@@ -32,31 +32,3 @@ namespace Inventory
     }
 
 }
-//StreamReader sr = new StreamReader("inventory.csv");
-//string? data = sr.ReadLine();
-
-//while (data != null)
-//{
-
-//    Console.WriteLine(data);
-//    data = sr.ReadLine();
-
-//}
-
-//Console.ReadKey(true);
-//sr.Close();
-//Menu();
-//                    }
-//                    catch (FileNotFoundException ex)
-//{
-//    Console.WriteLine("Your Inventory is currently empty. Please add items to view current Inventory. Thank You!\n\n" + "Error:" + ex);
-
-//    StreamWriter sw = new StreamWriter("ErrorLog.txt", true);
-//    DateTime errorDate = DateTime.Now;
-
-//    sw.WriteLine(errorDate + "\n" + ex + "\n");
-//    sw.WriteLine();
-//    sw.Flush();
-//    sw.Close();
-//    Thread.Sleep(3000);
-//    Menu();

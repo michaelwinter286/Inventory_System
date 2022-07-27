@@ -20,11 +20,11 @@ namespace Inventory
             {
                 Console.Clear();
                 Logos.TitleLogo();
-                Console.WriteLine("Please choose from one of the following options.");
+                Console.WriteLine("Please choose from one of the following options.(Make selection and press 'ENTER')");
                 Console.WriteLine();
                 Say("1", "Add New Inventory");                
-                Say("2", "Update Existing Inventory (currently Under Development)");  // to be added once SQL database is up and running              
-                Say("3", "Remove Item from Inventory");   // to be added once SQL database is up and running                
+                Say("2", "Update Existing Inventory (WIP)");  // to be added once SQL database is up and running              
+                Say("3", "Remove Item from Inventory (WIP)");   // to be added once SQL database is up and running                
                 Say("4", "View All Current Inventory");
                 Say("5", "View Error Log");
                 Say("6", "Quit");
@@ -49,8 +49,10 @@ namespace Inventory
                 else if (option == "3")
                 {
                     Console.Clear();
-                    Console.WriteLine("What item would you like to remove from the Inventory?");
-                    Console.ReadLine();// go to Remove Item from Inventory (this item is to delete a record) from dictionary
+                    Logos.EditLogo();
+                    Console.WriteLine("\n\n Press any key to return to Main Menu.");
+                    Console.ReadKey();
+                    Menu();
                 }
                 else if (option == "4")
                 {
@@ -67,10 +69,11 @@ namespace Inventory
 
                         for (int i = 0; i < readInv.Length; i++)
                         {
+
                             string[] rowData = readInv[i].Split(',');
                             invItem.Add(rowData[0]);
                             invAmount.Add(rowData[1]);
-
+                               
                             Console.WriteLine(invItem[i] + " - " + invAmount[i]);
                         }
                         Console.ReadKey(true);

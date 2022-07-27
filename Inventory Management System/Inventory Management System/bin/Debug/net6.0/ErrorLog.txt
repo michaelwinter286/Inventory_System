@@ -1,3 +1,4 @@
+7/26/2022 6:30:28 PM
 System.IO.FileNotFoundException: Could not find file 'C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\ErrorLog.txt'.
 File name: 'C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\ErrorLog.txt'
    at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
@@ -7,68 +8,5 @@ File name: 'C:\Users\micha\source\repos\Inventory_System\Inventory Management Sy
    at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
    at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
    at System.IO.StreamReader..ctor(String path)
-   at Inventory.MainMenu.Menu() in C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\MainMenu.cs:line 168
-
-7/20/2022 12:56:28 PM
-System.IO.FileNotFoundException: Could not find file 'C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\inventory.csv'.
-File name: 'C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\inventory.csv'
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
-   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
-   at System.IO.StreamReader..ctor(String path)
-   at Inventory.MainMenu.Menu() in C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\MainMenu.cs:line 130
-
-
-7/20/2022 1:56:48 PM
-System.IO.FileNotFoundException: Could not find file 'C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\inventory.csv'.
-File name: 'C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\bin\Debug\net6.0\inventory.csv'
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
-   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
-   at System.IO.File.InternalReadAllLines(String path, Encoding encoding)
-   at System.IO.File.ReadAllLines(String path)
-   at Inventory.MainMenu.Menu() in C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\MainMenu.cs:line 130
-
-
-7/20/2022 5:51:38 PM
-Invalid (null) item
-
-
-7/26/2022 5:13:12 PM
-Invalid (null) item
-
-
-7/26/2022 5:14:41 PM
-Invalid (null) item
-
-
-7/26/2022 5:15:46 PM
-Invalid (null) item
-
-
-7/26/2022 5:15:49 PM
-Invalid (null) item
-
-
-7/26/2022 5:15:53 PM
-Invalid (null) item
-
-
-7/26/2022 5:16:02 PM
-Invalid Amount (null)
-
-
-7/26/2022 5:16:59 PM
-Invalid Amount (null)
-
-
-7/26/2022 5:17:07 PM
-Invalid Amount (null)
-
+   at Inventory.MainMenu.Menu() in C:\Users\micha\source\repos\Inventory_System\Inventory Management System\Inventory Management System\MainMenu.cs:line 102
 
